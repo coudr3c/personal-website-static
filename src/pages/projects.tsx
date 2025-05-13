@@ -5,7 +5,7 @@ export default function Projects() {
     return (
         <>
             <PageTemplate pageTitle='Projects'>
-                <p>TEST</p>
+                <p>TEST TEST</p>
             </PageTemplate>
         </>
     );
