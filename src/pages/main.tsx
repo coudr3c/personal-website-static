@@ -11,7 +11,7 @@ import Skills from './skills.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='personal-website-static'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
