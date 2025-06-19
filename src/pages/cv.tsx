@@ -1,15 +1,17 @@
 import PageTemplate from './page-template';
 import ExperienceBlock from '../components/experience-block';
 import EducationBlock from '../components/education-block';
+import { useTranslation } from '../i18n/context';
 
 export default function CV() {
+    const { t } = useTranslation();
 
     return (
         <>
-            <PageTemplate pageTitle='CV'>
-                <h3>Click <a className='underline' href={'resume_cv.pdf'}>HERE</a> for a one-pager PDF, this is a detailed CV/Resume</h3>
+            <PageTemplate pageTitle={t.pages.cv} seoPageKey="cv">
+                <h3>{t.cv.pdfLinkPart1} <a className='underline' href={'resume_cv.pdf'}>{t.cv.pdfLinkText}</a> {t.cv.pdfLinkPart2}</h3>
                 <div>
-                    <h1 className='text-4xl'>Education</h1>
+                    <h1 className='text-4xl'>{t.cv.education}</h1>
                     <EducationBlock
                         diploma='MSc Computer Science + Engineer diploma'
                         university='EPFL (Lausanne Institute of Technology/Ecole Polytechnique Federale de Lausanne)'
@@ -23,7 +25,7 @@ export default function CV() {
                     </EducationBlock>
                 </div>
                 <div>
-                    <h1 className='text-4xl pb-4'>Past Experiences</h1>
+                    <h1 className='text-4xl pb-4'>{t.cv.pastExperiences}</h1>
                     <div className='grid grid-rows gap-4'>
                         <ExperienceBlock
                             position='FullStack/DevOps Engineer'
@@ -125,7 +127,7 @@ export default function CV() {
                     </div>
                 </div>
                 <div>
-                    <h1 className='text-4xl'>Miscellaneous Experience</h1>
+                    <h1 className='text-4xl'>{t.cv.miscExperiences}</h1>
                     {/* <ExperienceBlock
                         position='Vice President/Member'
                         company='Polyquity'

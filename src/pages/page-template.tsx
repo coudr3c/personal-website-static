@@ -1,27 +1,30 @@
 import Header from '../components/header';
+import SEOHead from '../components/seo-head';
 import type { PropsWithChildren } from 'react';
 
 type pageTemplateProps = {
-    pageTitle: string
+    pageTitle: string;
+    seoPageKey?: 'home' | 'about' | 'skills' | 'cv' | 'projects' | 'gsoc';
 }
 
 export default function PageTemplate(props: PropsWithChildren<pageTemplateProps>) {
     return (
         <>
-            <head title="coudr3c">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-            </head>
-            <div className="flex min-h-screen flex-col items-center bg-zinc-200 text-gray-950 lg:justify-center lg:p-8">
-                <Header>
-                </Header>
-                <div className="flex grid grid-cols-3 w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <div className='col-start-2 grid grid-rows gap-5'>
-                        <h1 className="flex text-5xl justify-center ">{props.pageTitle}</h1>
-                        {props.children}
-                    </div>
+            <SEOHead pageKey={props.seoPageKey} />
+            <div className="min-h-screen w-full bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-900 dark:to-zinc-800">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <Header />
+                    <main className="py-12">
+                        <div className="max-w-2xl mx-auto w-full">
+                            <h1 className="text-4xl sm:text-5xl font-semibold text-center mb-8 gradient-text">
+                                {props.pageTitle}
+                            </h1>
+                            <div className="space-y-6 w-full">
+                                {props.children}
+                            </div>
+                        </div>
+                    </main>
                 </div>
-                <div className="hidden h-14.5 lg:block"></div>
             </div>
         </>
     );
