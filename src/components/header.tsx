@@ -134,29 +134,45 @@ type LanguageToggleProps = {
 
 function LanguageToggle({ language, setLanguage }: LanguageToggleProps) {
     return (
-        <div className="flex items-center gap-1 mr-2">
-            <button
+        <div className="flex items-center gap-2 mr-2">
+            <span
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 text-sm font-medium rounded-md transition-colors ${
+                className={`text-2xl cursor-pointer transition-opacity ${
                     language === 'en'
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                        ? 'opacity-100'
+                        : 'opacity-50 hover:opacity-75'
                 }`}
                 title="English"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setLanguage('en');
+                    }
+                }}
             >
                 🇬🇧
-            </button>
-            <button
+            </span>
+            <span
                 onClick={() => setLanguage('fr')}
-                className={`px-2 py-1 text-sm font-medium rounded-md transition-colors ${
+                className={`text-2xl cursor-pointer transition-opacity ${
                     language === 'fr'
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                        ? 'opacity-100'
+                        : 'opacity-50 hover:opacity-75'
                 }`}
                 title="Français"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setLanguage('fr');
+                    }
+                }}
             >
                 🇫🇷
-            </button>
+            </span>
         </div>
     );
 }
@@ -167,7 +183,7 @@ type ThemeToggleProps = {
 };
 
 function ThemeToggle({ theme, toggleTheme }: ThemeToggleProps) {
-    const getButtonContent = () => {
+    const getEmojiContent = () => {
         return theme === 'dark' ? '🌙' : '☀️';
     };
 
@@ -176,12 +192,20 @@ function ThemeToggle({ theme, toggleTheme }: ThemeToggleProps) {
     };
 
     return (
-        <button
+        <span
             onClick={toggleTheme}
-            className="px-2 py-1 text-sm font-medium rounded-md transition-colors text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            className="text-2xl cursor-pointer transition-opacity hover:opacity-75"
             title={getTitle()}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleTheme();
+                }
+            }}
         >
-            {getButtonContent()}
-        </button>
+            {getEmojiContent()}
+        </span>
     );
 }
