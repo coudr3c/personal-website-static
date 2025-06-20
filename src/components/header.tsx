@@ -7,10 +7,10 @@ import type { Theme } from '../contexts/theme-context';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { language, setLanguage, t } = useTranslation();
-    const { theme, toggleTheme, isDarkMode } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
     return (
-        <header className="sticky top-0 z-50 py-6 w-full bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+        <header className="sticky top-0 z-50 py-6 w-full bg-white/95 backdrop-blur-sm dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     {/* Logo/Home */}
@@ -57,7 +57,7 @@ export default function Header() {
                             <NavLink to="/projects">{t.nav.projects}</NavLink>
                         </nav>
                         <LanguageToggle language={language} setLanguage={setLanguage} />
-                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Header() {
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-center gap-2 mb-2">
                                 <LanguageToggle language={language} setLanguage={setLanguage} />
-                                <ThemeToggle theme={theme} toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+                                <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                             </div>
                             <MobileNavLink to="/about" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</MobileNavLink>
                             <MobileNavLink to="/skills" onClick={() => setIsMenuOpen(false)}>{t.nav.skills}</MobileNavLink>
@@ -164,22 +164,15 @@ function LanguageToggle({ language, setLanguage }: LanguageToggleProps) {
 type ThemeToggleProps = {
     theme: Theme;
     toggleTheme: () => void;
-    isDarkMode: boolean;
 };
 
-function ThemeToggle({ theme, toggleTheme, isDarkMode }: ThemeToggleProps) {
+function ThemeToggle({ theme, toggleTheme }: ThemeToggleProps) {
     const getButtonContent = () => {
-        if (theme === 'system') {
-            return isDarkMode ? '🌙' : '☀️';
-        }
         return theme === 'dark' ? '🌙' : '☀️';
     };
 
     const getTitle = () => {
-        if (theme === 'system') {
-            return `System preference (${isDarkMode ? 'dark' : 'light'})`;
-        }
-        return theme === 'dark' ? 'Dark mode' : 'Light mode';
+        return theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
     };
 
     return (

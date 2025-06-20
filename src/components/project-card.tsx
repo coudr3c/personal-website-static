@@ -6,7 +6,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-8 border border-zinc-200 dark:border-zinc-700 min-h-[320px] flex flex-col">
+    <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-8 border border-gray-200 dark:border-zinc-700 min-h-[320px] flex flex-col">
       <div className="mb-4">
         <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 leading-tight mb-2">
           {project.title}
@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       
       <div className="mt-auto space-y-4">
         {project.links && Object.keys(project.links).length > 0 && (
-          <div className="flex flex-wrap gap-4 pt-4 border-t border-zinc-200 dark:border-zinc-600">
+          <div className="flex flex-wrap gap-4 pt-4 border-t border-gray-200 dark:border-zinc-600">
             {project.links.github && (
               <a
                 href={project.links.github}

@@ -28,34 +28,34 @@ export default function CV() {
                     <h1 className='text-4xl pb-4'>{t.cv.pastExperiences}</h1>
                     <div className='grid grid-rows gap-4'>
                         <ExperienceBlock
-                            position='FullStack/DevOps Engineer'
-                            company='Komugi (SaaS, B2B, APS/ERP)'
-                            location='Thonon-les-Bains/Remote'
-                            timePeriodFrom='September 2022'
-                            timePeriodTo='Now'
-                            keywords='SaaS, B2B, PHP 8, Symfony, Doctrine, PostgreSQL, React, TypeScript, AWS, Terraform, Agile'
-                        >
-                            <p>
-                                Komugi is a french B2B startup developing 
-                                an <a className='underline' href='https://www.planilog.com/support/advanced-planning-scheduling-aps/'>
-                                    APS (Advanced Planning and Scheduling)
-                                </a>  SaaS solution for industries. 
-                                We provide advanced scheduling with scenarization, load/capacity computations, 
-                                machine and operator management, turnover computation etc...  
-                            </p>
-                            <br/>
-                            <p>
-                                My roles at Komugi are Fullstack and DevOps engineer. We work in Agile with the SCRUM methodology and my User Stories
-                                can involve for the Backend part working in depth on the scheduling algorithm, on database access, optimizations, API development, Data importation
-                                through files etc... On the frontend part, I usually update or create graphs, update data from the backend, or add new logic
-                            </p>
-                            <br/>
-                            <p>
-                                As a DevOps engineer I also make use of Terraform to create and maintain our client environments on AWS, update logs,
-                                or develop new capabilities. For example, I implemented an event based automatic deployment of a docker computation service
-                                in order to use more powerful ECS pods for cheaper. Previous implementation ran on the 24/7 API server.
-                            </p>
-                        </ExperienceBlock>
+                                position='FullStack/DevOps Engineer'
+                                company='Komugi (SaaS, B2B, APS/ERP)'
+                                location='Thonon-les-Bains/Remote'
+                                timePeriodFrom='September 2022'
+                                timePeriodTo='Now'
+                                keywords='SaaS, B2B, PHP 8, Symfony, Doctrine, PostgreSQL, React, TypeScript, AWS, Terraform, Agile'
+                            >
+                                <p>
+                                    Komugi is a french B2B startup developing 
+                                    an <a className='underline' href='https://www.planilog.com/support/advanced-planning-scheduling-aps/'>
+                                        APS (Advanced Planning and Scheduling)
+                                    </a>  SaaS solution for industries. 
+                                    We provide advanced scheduling with scenarization, load/capacity computations, 
+                                    machine and operator management, turnover computation etc...  
+                                </p>
+                                <br/>
+                                <p>
+                                    My roles at Komugi are Fullstack and DevOps engineer. We work in Agile with the SCRUM methodology and my User Stories
+                                    can involve for the Backend part working in depth on the scheduling algorithm, on database access, optimizations, API development, Data importation
+                                    through files etc... On the frontend part, I usually update or create graphs, update data from the backend, or add new logic
+                                </p>
+                                <br/>
+                                <p>
+                                    As a DevOps engineer I also make use of Terraform to create and maintain our client environments on AWS, update logs,
+                                    or develop new capabilities. For example, I implemented an event based automatic deployment of a docker computation service
+                                    in order to use more powerful ECS pods for cheaper. Previous implementation ran on the 24/7 API server.
+                                </p>
+                            </ExperienceBlock>
                         <ExperienceBlock
                             position='Cyber Security Engineer'
                             company='Elca Security'
@@ -67,12 +67,12 @@ export default function CV() {
                             <p>During my time at Elca Security and as part of the CloudSec team, I had exposure to Azure, Splunk, Azure Sentinel, Metasploit, the Burp Suite, Penetration testing etc...</p>
                         </ExperienceBlock>
                         <ExperienceBlock
-                            position='Research Engineer'
-                            company='Information Security and Privacy Lab'
-                            location='Lausanne University'
-                            timePeriodFrom='September 2020'
-                            timePeriodTo='August 2021'
-                            keywords='Privacy, Python, OpenWPM, Scraping, Pandas, scikit-learn, Matplotlib, Research, Paper writing'
+                                position='Research Engineer'
+                                company='Information Security and Privacy Lab'
+                                location='Lausanne University'
+                                timePeriodFrom='September 2020'
+                                timePeriodTo='August 2021'
+                                keywords='Privacy, Python, OpenWPM, Scraping, Pandas, scikit-learn, Matplotlib, Research, Paper writing'
                         >
                             <p>Following my Master thesis, held a Research engineer position at the Information Security and Privacy Lab, Lausanne University, lead by Prof. Kévin Huguenin.</p>
                             <br/>
@@ -84,12 +84,12 @@ export default function CV() {
                             </p>
                         </ExperienceBlock>
                         <ExperienceBlock
-                            position='Master Thesis'
-                            company='PRIVATICS Lab'
-                            location='INRIA Grenoble'
-                            timePeriodFrom='February 2020'
-                            timePeriodTo='July 2020'
-                            keywords='Privacy, Research, Scraping, OpenWPM, Python, Pandas, Dark Patterns, Cookie Banners'
+                                position='Master Thesis'
+                                company='PRIVATICS Lab'
+                                location='INRIA Grenoble'
+                                timePeriodFrom='February 2020'
+                                timePeriodTo='July 2020'
+                                keywords='Privacy, Research, Scraping, OpenWPM, Python, Pandas, Dark Patterns, Cookie Banners'
                         >
                             <p>During my Master Thesis in the PRIVATICS lab at INRIA Grenoble, I developed a tool to detect and analyze Dark Patterns in cookie banners from thousands of websites</p>
                             <br/>
@@ -101,12 +101,12 @@ export default function CV() {
                             <p>A detailed analysis is available in my report, but this work showed that from 9344 banners found, 96% of them had at least one form of Dark Pattern</p>
                         </ExperienceBlock>
                         <ExperienceBlock
-                            position='Engineering Internship'
-                            company='Logitech'
-                            location='Lausanne'
-                            timePeriodFrom='February 2018'
-                            timePeriodTo='August 2018'
-                            keywords='C++, Valve/CSGo, Machine Learning, scikit-learn, Data Analysis, Data Prediction'
+                                position='Engineering Internship'
+                                company='Logitech'
+                                location='Lausanne'
+                                timePeriodFrom='February 2018'
+                                timePeriodTo='August 2018'
+                                keywords='C++, Valve/CSGo, Machine Learning, scikit-learn, Data Analysis, Data Prediction'
                         >
                             <p>For my mandatory internship, I chose to work at Logitech. Originally a peripherals company, Logitech aims to get into data science and understand better eSports (since they sponsor big teams).</p>
                             <br/>
@@ -115,12 +115,12 @@ export default function CV() {
                             <p>During this internship, I broadened my technical skills (learnt how to use Docker, GPU farms, Kubernetes, got better at C++ and Makefiles/CMake) as well as my soft skills (I attented several trainings on presentations, had to present my project several times, and got involved in meetings).</p>
                         </ExperienceBlock>
                         <ExperienceBlock
-                            position='Google Summer of Code'
-                            company='Scala Organization (Scala Native)'
-                            location='Lausanne'
-                            timePeriodFrom='June 2017'
-                            timePeriodTo='August 2017'
-                            keywords='Scala, C, Java, Systems Programming, Concurrency, Multithreading'
+                                position='Google Summer of Code'
+                                company='Scala Organization (Scala Native)'
+                                location='Lausanne'
+                                timePeriodFrom='June 2017'
+                                timePeriodTo='August 2017'
+                                keywords='Scala, C, Java, Systems Programming, Concurrency, Multithreading'
                         >
                             <p>See <a className='underline' href='gsoc'>the dedicated page</a>, I worked on the multithreading for Scala Native, and ahead of time compiler for Scala.</p>
                         </ExperienceBlock>

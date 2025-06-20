@@ -13,26 +13,26 @@
   --gradient-start-dark: #60a5fa;
   --gradient-end-dark: #a78bfa;
   
-  /* Softer background colors */
-  --bg-primary-light: #fafafa;
-  --bg-secondary-light: #f4f4f5;
+  /* Light and airy background colors */
+  --bg-primary-light: #f8f9fa;
+  --bg-secondary-light: #f1f3f4;
   --bg-primary-dark: #0a0a0a;
   --bg-secondary-dark: #1a1a1a;
   
-  /* Enhanced surface colors */
+  /* Bright surface colors */
   --surface-light: #ffffff;
-  --surface-light-hover: #f9fafb;
+  --surface-light-hover: #f8f9fa;
   --surface-dark: #18181b;
   --surface-dark-hover: #27272a;
   
-  /* Improved text colors with better contrast */
-  --text-primary-light: #18181b;
-  --text-secondary-light: #71717a;
+  /* High contrast text colors for light theme */
+  --text-primary-light: #1a1a1a;
+  --text-secondary-light: #6b7280;
   --text-primary-dark: #fafafa;
   --text-secondary-dark: #a1a1aa;
   
-  /* Subtle border colors */
-  --border-light: #e4e4e7;
+  /* Lighter border colors */
+  --border-light: #e5e7eb;
   --border-dark: #3f3f46;
   
   /* Enhanced shadows */
