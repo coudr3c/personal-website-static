@@ -73,6 +73,17 @@ type TranslationStructure = {
     unexpectedError: string;
     tryAgain: string;
   };
+  projects: {
+    featured: string;
+    categories: {
+      thesis: string;
+      internship: string;
+      gsoc: string;
+      hackathon: string;
+      school: string;
+      misc: string;
+    };
+  };
   common: {
     loading: string;
   };

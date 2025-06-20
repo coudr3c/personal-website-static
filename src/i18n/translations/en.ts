@@ -81,6 +81,19 @@ export const en = {
     tryAgain: 'Try Again',
   },
 
+  // Projects page
+  projects: {
+    featured: 'Featured Projects',
+    categories: {
+      thesis: 'Thesis & Research',
+      internship: 'Internships',
+      gsoc: 'Google Summer of Code',
+      hackathon: 'Hackathons',
+      school: 'Academic Projects',
+      misc: 'Miscellaneous Projects',
+    },
+  },
+
   // Common
   common: {
     loading: 'Loading...',

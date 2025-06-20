@@ -81,6 +81,19 @@ export const fr = {
     tryAgain: 'Réessayer',
   },
 
+  // Projects page
+  projects: {
+    featured: 'Projets Phares',
+    categories: {
+      thesis: 'Thèse & Recherche',
+      internship: 'Stages',
+      gsoc: 'Google Summer of Code',
+      hackathon: 'Hackathons',
+      school: 'Projets Académiques',
+      misc: 'Projets Divers',
+    },
+  },
+
   // Common
   common: {
     loading: 'Chargement...',
