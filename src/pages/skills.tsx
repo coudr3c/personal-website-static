@@ -11,8 +11,8 @@ export default function Skills() {
                 <SkillCard title={t.skills.webDevelopment}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
-                            <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">{t.skills.backend}</h3>
-                            <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <h3 className="text-lg font-semibold mb-3 text-theme-text-primary">{t.skills.backend}</h3>
+                            <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                                 <li>Symfony/PHP 8</li>
                                 <li>Laravel</li>
                                 <li>Doctrine ORM</li>
@@ -21,8 +21,8 @@ export default function Skills() {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">{t.skills.frontend}</h3>
-                            <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <h3 className="text-lg font-semibold mb-3 text-theme-text-primary">{t.skills.frontend}</h3>
+                            <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                                 <li>React</li>
                                 <li>TypeScript</li>
                                 <li>HighCharts</li>
@@ -30,8 +30,8 @@ export default function Skills() {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">{t.skills.infraDevOps}</h3>
-                            <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <h3 className="text-lg font-semibold mb-3 text-theme-text-primary">{t.skills.infraDevOps}</h3>
+                            <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                                 <li>AWS (Cognito, API Gateway, Event Bridge, CloudWatch, ECS, S3, RDS...)</li>
                                 <li>Terraform</li>
                                 <li>Azure</li>
@@ -43,7 +43,7 @@ export default function Skills() {
                 </SkillCard>
 
                 <SkillCard title={t.skills.programmingLanguages}>
-                    <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                         <li>PHP 8</li>
                         <li>Scala/Java</li>
                         <li>C/C++</li>
@@ -53,7 +53,7 @@ export default function Skills() {
                 </SkillCard>
 
                 <SkillCard title={t.skills.computerScience}>
-                    <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                         <li>{t.skills.designPatterns}</li>
                         <li>{t.skills.dataScience}</li>
                         <li>{t.skills.cryptography}</li>
@@ -62,7 +62,7 @@ export default function Skills() {
                 </SkillCard>
 
                 <SkillCard title={t.skills.languages}>
-                    <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">
                         <li>{t.skills.frenchNative}</li>
                         <li>{t.skills.englishFluent}</li>
                     </ul>

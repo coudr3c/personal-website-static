@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react';
 
 export type Theme = 'light' | 'dark';
 
@@ -42,35 +42,37 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
                 return;
             }
         }
-    }, []);
-
-    // Apply theme whenever it changes
-    useEffect(() => {
-        const shouldBeDark = theme === 'dark';
+        
+        // Apply theme to DOM - force override system preferences
+        const root = document.documentElement;
         
         // Save theme to localStorage
         localStorage.setItem('theme', theme);
         
-        // Apply to document
-        const root = document.documentElement;
-        if (shouldBeDark) {
-            root.classList.add('dark');
-        } else {
-            root.classList.remove('dark');
-        }
+        // Remove any existing theme classes
+        root.classList.remove('dark', 'light');
+        
+        // Add the selected theme class
+        root.classList.add(theme);
+        
+        // Force color-scheme to override browser defaults
+        root.style.colorScheme = theme;
+        
+        // Set data attribute for additional CSS targeting
+        root.setAttribute('data-theme', theme);
     }, [theme]);
 
     // Simple toggle between light and dark
-    const toggleTheme = () => {
+    const toggleTheme = useCallback(() => {
         const newTheme: Theme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
-    };
+    }, [theme]);
+
+    const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            <div className={theme === 'dark' ? 'dark' : ''}>
-                {children}
-            </div>
+        <ThemeContext.Provider value={value}>
+            {children}
         </ThemeContext.Provider>
     );
 }

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from 'react';
 import { en } from './translations/en';
 import { fr } from './translations/fr';
 
@@ -89,7 +89,6 @@ type TranslationStructure = {
   };
 };
 
-export type TranslationKey = TranslationStructure;
 
 const translations = {
   en,
@@ -99,7 +98,7 @@ const translations = {
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: TranslationKey;
+  t: TranslationStructure;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -135,11 +134,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     setLanguageState(lang);
   };
 
-  const value: LanguageContextType = {
+  const value = useMemo((): LanguageContextType => ({
     language,
     setLanguage,
     t: translations[language],
-  };
+  }), [language]);
 
   return (
     <LanguageContext.Provider value={value}>

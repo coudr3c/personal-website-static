@@ -13,7 +13,13 @@ export default function Home() {
                     <p>{t.home.contactText} <a className='underline' href='mailto:remi-coudert@protonmail.com'>remi-coudert@protonmail.com</a>.</p>
                 </div>
                 <div className="">
-                    <img src='lake.jpg'></img>
+                    <img 
+                    src='lake.jpg' 
+                    alt="Scenic lake view with mountains in the background"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                />
                 </div>
             </PageTemplate>
         </>

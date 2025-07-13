@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import ErrorBoundary from '../components/error-boundary';
 import { LanguageProvider } from '../i18n/context';
 import { lazy, Suspense } from 'react';
+import { APP_CONFIG } from '../constants/config';
 
 const Home = lazy(() => import('./home.tsx'));
 const About = lazy(() => import('./about.tsx'));
@@ -19,9 +20,14 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <LanguageProvider>
       <ErrorBoundary>
-        <BrowserRouter basename='personal-website-static/'>
+        <BrowserRouter basename={APP_CONFIG.BASENAME}>
           <Layout>
-            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div></div>}>
+            <Suspense fallback={
+              <div className="flex items-center justify-center min-h-screen" role="status" aria-live="polite">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <span className="sr-only">Loading page content...</span>
+              </div>
+            }>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

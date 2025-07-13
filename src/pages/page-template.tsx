@@ -11,7 +11,7 @@ export default function PageTemplate(props: PropsWithChildren<pageTemplateProps>
     return (
         <>
             <SEOHead pageKey={props.seoPageKey} />
-            <div className="min-h-screen w-full bg-gray-50 dark:from-zinc-900 dark:to-zinc-800 dark:bg-gradient-to-b">
+            <div className="min-h-screen w-full bg-theme-bg-primary">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <Header />
                     <main className="py-12">

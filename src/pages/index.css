@@ -1,43 +1,38 @@
 @import "tailwindcss";
 
+/* Base theme variables - these will be overridden by specific theme classes */
 :root {
-  /* Enhanced color palette inspired by reference site */
+  /* Enhanced color palette */
   --color-primary-light: #3b82f6;
-  --color-primary-dark: #60a5fa;
+  --color-primary-dark: #7dd3fc;
   --color-secondary-light: #8b5cf6;
-  --color-secondary-dark: #a78bfa;
+  --color-secondary-dark: #c4b5fd;
   
   /* Refined gradient colors */
   --gradient-start-light: #3b82f6;
   --gradient-end-light: #8b5cf6;
-  --gradient-start-dark: #60a5fa;
-  --gradient-end-dark: #a78bfa;
+  --gradient-start-dark: #7dd3fc;
+  --gradient-end-dark: #c4b5fd;
   
-  /* Light and airy background colors */
-  --bg-primary-light: #f8f9fa;
-  --bg-secondary-light: #f1f3f4;
-  --bg-primary-dark: #0a0a0a;
-  --bg-secondary-dark: #1a1a1a;
-  
-  /* Bright surface colors */
+  /* Light theme colors */
+  --bg-primary-light: #ffffff;
+  --bg-secondary-light: #f8f9fa;
   --surface-light: #ffffff;
   --surface-light-hover: #f8f9fa;
-  --surface-dark: #18181b;
-  --surface-dark-hover: #27272a;
-  
-  /* High contrast text colors for light theme */
-  --text-primary-light: #1a1a1a;
-  --text-secondary-light: #6b7280;
-  --text-primary-dark: #fafafa;
-  --text-secondary-dark: #a1a1aa;
-  
-  /* Lighter border colors */
+  --text-primary-light: #1f2937;
+  --text-secondary-light: #4b5563;
   --border-light: #e5e7eb;
-  --border-dark: #3f3f46;
+  --shadow-color-light: rgb(0 0 0 / 0.1);
   
-  /* Enhanced shadows */
-  --shadow-color-light: rgb(24 24 27 / 0.08);
-  --shadow-color-dark: rgb(0 0 0 / 0.25);
+  /* Dark theme colors - improved readability */
+  --bg-primary-dark: #1a1b23;
+  --bg-secondary-dark: #252730;
+  --surface-dark: #2a2d3a;
+  --surface-dark-hover: #343741;
+  --text-primary-dark: #e2e8f0;
+  --text-secondary-dark: #94a3b8;
+  --border-dark: #475569;
+  --shadow-color-dark: rgb(0 0 0 / 0.3);
   
   /* Animation durations */
   --transition-fast: 150ms;
@@ -48,17 +43,62 @@
   font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color-scheme: light dark;
   font-feature-settings: 'cv03', 'cv04', 'cv11';
   font-optical-sizing: auto;
-  
-  /* Light mode defaults */
-  color: var(--text-primary-light);
-  background-color: var(--bg-primary-light);
 }
 
-/* Smooth transitions for theme changes */
-* {
+/* Light theme - explicit override of any system preferences */
+html.light {
+  color-scheme: light !important;
+  background-color: var(--bg-primary-light) !important;
+  color: var(--text-primary-light) !important;
+  
+  /* Light theme CSS variables */
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --surface: var(--surface-light);
+  --surface-hover: var(--surface-light-hover);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border-color: var(--border-light);
+  --shadow-color: var(--shadow-color-light);
+}
+
+/* Dark theme - explicit override of any system preferences */
+html.dark {
+  color-scheme: dark !important;
+  background-color: var(--bg-primary-dark) !important;
+  color: var(--text-primary-dark) !important;
+  
+  /* Dark theme CSS variables */
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --surface: var(--surface-dark);
+  --surface-hover: var(--surface-dark-hover);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border-color: var(--border-dark);
+  --shadow-color: var(--shadow-color-dark);
+}
+
+/* Smooth transitions for theme changes - applied to specific elements */
+.transition-theme {
+  transition: 
+    background-color var(--transition-normal) ease,
+    border-color var(--transition-normal) ease,
+    color var(--transition-normal) ease,
+    box-shadow var(--transition-normal) ease;
+}
+
+/* Apply transitions to common elements that need them */
+body, 
+header, 
+nav, 
+.card-base, 
+.tech-tag, 
+.project-link,
+button,
+a {
   transition: 
     background-color var(--transition-normal) ease,
     border-color var(--transition-normal) ease,
@@ -69,18 +109,16 @@
 /* Card base styles */
 .card-base {
   @apply rounded-lg border shadow-sm hover:shadow-md transition-all;
-  background: var(--surface-light);
-  border-color: var(--border-light);
-}
-
-.dark .card-base {
-  background: var(--surface-dark);
-  border-color: var(--border-dark);
+  background: var(--surface);
+  border-color: var(--border-color);
 }
 
 /* Gradient text */
 .gradient-text {
   @apply bg-clip-text text-transparent;
+}
+
+html.light .gradient-text {
   background-image: linear-gradient(
     to right,
     var(--gradient-start-light),
@@ -88,7 +126,7 @@
   );
 }
 
-.dark .gradient-text {
+html.dark .gradient-text {
   background-image: linear-gradient(
     to right,
     var(--gradient-start-dark),
@@ -99,42 +137,49 @@
 /* Timeline styles */
 .timeline-dot {
   @apply w-3 h-3 rounded-full ring-4;
-  background-color: var(--color-primary-light);
-  ring-color: var(--surface-light);
+  ring-color: var(--surface);
 }
 
-.dark .timeline-dot {
+html.light .timeline-dot {
+  background-color: var(--color-primary-light);
+}
+
+html.dark .timeline-dot {
   background-color: var(--color-primary-dark);
-  ring-color: var(--surface-dark);
 }
 
 .timeline-line {
   @apply w-px;
-  background-color: var(--border-light);
+  background-color: var(--border-color);
 }
 
-.dark .timeline-line {
-  background-color: var(--border-dark);
+/* Technology tags */
+.tech-tag {
+  @apply text-sm px-3 py-1 rounded-full;
 }
 
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--text-primary-dark);
-    background-color: var(--bg-primary-dark);
-  }
-  
-  .dark\:prose-dark {
-    --tw-prose-body: var(--text-primary-dark);
-    --tw-prose-headings: var(--text-primary-dark);
-    --tw-prose-links: var(--color-primary-dark);
-    --tw-prose-bold: var(--text-primary-dark);
-    --tw-prose-quotes: var(--text-secondary-dark);
-    --tw-prose-code: var(--text-primary-dark);
-    --tw-prose-hr: var(--border-dark);
-    --tw-prose-th-borders: var(--border-dark);
-  }
+html.light .tech-tag {
+  @apply bg-blue-100 text-blue-800;
 }
+
+html.dark .tech-tag {
+  @apply bg-blue-900/30 text-blue-300;
+}
+
+/* Links */
+.project-link {
+  @apply text-base transition-colors font-medium;
+}
+
+html.light .project-link {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+html.dark .project-link {
+  @apply text-blue-400 hover:text-blue-300;
+}
+
+/* Remove system preference overrides - we now control themes explicitly */
 
 html, body {
   margin: 0;
@@ -142,6 +187,8 @@ html, body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 body {
@@ -158,12 +205,27 @@ body {
 
 a {
   font-weight: 500;
-  color: var(--color-primary-light);
   text-decoration: none;
 }
 
-a:hover {
+html.light a {
+  color: var(--color-primary-light);
+}
+
+html.dark a {
   color: var(--color-primary-dark);
+}
+
+html.light a:hover {
+  color: var(--color-primary-dark);
+}
+
+html.dark a:hover {
+  color: var(--color-primary-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
 }
 
 h1 {
@@ -172,11 +234,6 @@ h1 {
   font-weight: 800;
   margin-bottom: 2rem;
   letter-spacing: -0.05em;
-  color: var(--text-primary-light);
-}
-
-.dark h1 {
-  color: var(--text-primary-dark);
 }
 
 h2 {
@@ -185,11 +242,6 @@ h2 {
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
-  color: var(--text-primary-light);
-}
-
-.dark h2 {
-  color: var(--text-primary-dark);
 }
 
 h3 {
@@ -198,22 +250,13 @@ h3 {
   font-weight: 600;
   margin-bottom: 1.25rem;
   letter-spacing: -0.015em;
-  color: var(--text-primary-light);
-}
-
-.dark h3 {
-  color: var(--text-primary-dark);
 }
 
 p {
   margin-bottom: 1.5rem;
   line-height: 1.75;
   font-size: 1.05rem;
-  color: var(--text-secondary-light);
-}
-
-.dark p {
-  color: var(--text-secondary-dark);
+  color: var(--text-secondary);
 }
 
 button {
@@ -223,20 +266,38 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--color-primary-light);
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-button:hover {
+html.light button {
+  background-color: var(--color-primary-light);
+}
+
+html.dark button {
+  background-color: var(--color-primary-dark);
+}
+
+html.light button:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-1px);
 }
 
-button:focus,
-button:focus-visible {
+html.dark button:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+
+html.light button:focus,
+html.light button:focus-visible {
   outline: 3px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+html.dark button:focus,
+html.dark button:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 

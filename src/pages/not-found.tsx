@@ -5,15 +5,15 @@ export default function NotFound() {
     const { t } = useTranslation();
     
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="min-h-screen flex items-center justify-center bg-theme-bg-primary">
             <div className="text-center p-8">
-                <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                <h1 className="text-6xl font-bold text-theme-text-primary mb-4">
                     404
                 </h1>
-                <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+                <h2 className="text-2xl font-semibold text-theme-text-secondary mb-6">
                     {t.error.notFound}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-8">
+                <p className="text-theme-text-secondary mb-8">
                     {t.error.notFoundDescription}
                 </p>
                 <Link

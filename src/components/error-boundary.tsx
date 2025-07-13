@@ -1,4 +1,5 @@
 import { Component, type ReactNode } from 'react';
+import { useTranslation } from '../i18n/context';
 
 interface Props {
     children: ReactNode;
@@ -31,18 +32,16 @@ export default class ErrorBoundary extends Component<Props, State> {
     }
 }
 
-import { useTranslation } from '../i18n/context';
-
 function ErrorFallback({ onRetry }: { onRetry: () => void }) {
     const { t } = useTranslation();
     
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="min-h-screen flex items-center justify-center bg-theme-bg-primary">
             <div className="text-center p-8">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h1 className="text-2xl font-bold text-theme-text-primary mb-4">
                     {t.error.somethingWrong}
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-theme-text-secondary mb-6">
                     {t.error.unexpectedError}
                 </p>
                 <button
