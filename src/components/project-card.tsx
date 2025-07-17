@@ -7,9 +7,9 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="bg-theme-surface rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-8 border border-theme-border min-h-[320px] flex flex-col">
+    <div className="bg-theme-surface rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 sm:p-6 md:p-8 border border-theme-border min-h-[320px] flex flex-col">
       <div className="mb-4">
-        <h3 className="text-2xl font-semibold text-theme-text-primary leading-tight mb-2">
+        <h3 className="text-xl sm:text-2xl font-semibold text-theme-text-primary leading-tight mb-2">
           {project.title}
         </h3>
         {project.period && (
@@ -25,7 +25,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       
       <div className="mt-auto space-y-4">
         {project.links && Object.keys(project.links).length > 0 && (
-          <div className="flex flex-wrap gap-4 pt-4 border-t border-theme-border">
+          <div className="flex flex-wrap gap-2 sm:gap-4 pt-4 border-t border-theme-border">
             {project.links.github && (
               <a
                 href={project.links.github}

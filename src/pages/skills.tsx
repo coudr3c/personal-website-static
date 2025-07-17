@@ -9,7 +9,7 @@ export default function Skills() {
         <PageTemplate pageTitle={t.pages.skills} seoPageKey="skills">
             <div className="grid gap-6">
                 <SkillCard title={t.skills.webDevelopment}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                         <div>
                             <h3 className="text-lg font-semibold mb-3 text-theme-text-primary">{t.skills.backend}</h3>
                             <ul className="space-y-2 list-disc list-inside text-theme-text-secondary">

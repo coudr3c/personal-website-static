@@ -8,9 +8,9 @@ type SkillCardProps = {
 
 function SkillCard({ title, children, className = '' }: SkillCardProps) {
     return (
-        <div className={`relative rounded-lg border border-theme-border bg-theme-surface p-6 shadow-sm ${className}`}
+        <div className={`relative rounded-lg border border-theme-border bg-theme-surface p-4 sm:p-6 shadow-sm ${className}`}
         >
-            <div className="p-6">
+            <div className="p-2 sm:p-4 md:p-6">
                 <h2 className="text-xl font-semibold mb-4 text-theme-text-primary">
                     {title}
                 </h2>

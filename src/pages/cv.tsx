@@ -11,7 +11,7 @@ export default function CV() {
             <PageTemplate pageTitle={t.pages.cv} seoPageKey="cv">
                 <h3>{t.cv.pdfLinkPart1} <a className='underline' href={'resume_cv.pdf'}>{t.cv.pdfLinkText}</a> {t.cv.pdfLinkPart2}</h3>
                 <div>
-                    <h1 className='text-4xl'>{t.cv.education}</h1>
+                    <h1 className='text-2xl sm:text-3xl md:text-4xl'>{t.cv.education}</h1>
                     <EducationBlock
                         diploma='MSc Computer Science + Engineer diploma'
                         university='EPFL (Lausanne Institute of Technology/Ecole Polytechnique Federale de Lausanne)'
@@ -25,7 +25,7 @@ export default function CV() {
                     </EducationBlock>
                 </div>
                 <div>
-                    <h1 className='text-4xl pb-4'>{t.cv.pastExperiences}</h1>
+                    <h1 className='text-2xl sm:text-3xl md:text-4xl pb-4'>{t.cv.pastExperiences}</h1>
                     <div className='grid grid-rows gap-4'>
                         <ExperienceBlock
                                 position='FullStack/DevOps Engineer'
@@ -89,16 +89,15 @@ export default function CV() {
                                 location='INRIA Grenoble'
                                 timePeriodFrom='February 2020'
                                 timePeriodTo='July 2020'
-                                keywords='Privacy, Research, Scraping, OpenWPM, Python, Pandas, Dark Patterns, Cookie Banners'
+                                keywords='Privacy, Research, Scraping, OpenWPM, Python, Pandas, Dark Patterns, Cookie Banners, DOM Analysis'
                         >
-                            <p>During my Master Thesis in the PRIVATICS lab at INRIA Grenoble, I developed a tool to detect and analyze Dark Patterns in cookie banners from thousands of websites</p>
+                            <p>During my Master Thesis titled "Automatically detect Dark patterns in cookie banners" at PRIVATICS lab (INRIA Grenoble), I developed a comprehensive tool to detect and analyze dark patterns in cookie consent banners across the web.</p>
                             <br/>
-                            <p>As part of the analysis, I crawled over 100.000 of the most visited websites using the <a className='underline' href='https://github.com/openwpm/OpenWPM'>OpenWPM</a> tool and
-                            extracted DOM HTML components, assigned them a likelihood score of being the outermost component containing a Cookie Banner</p>
+                            <p>The research involved crawling over 100,000 websites from the Tranco top list using the <a className='underline' href='https://github.com/openwpm/OpenWPM'>OpenWPM</a> tool. I extracted DOM HTML components and developed a scoring system to assign likelihood scores for identifying the outermost components containing cookie banners.</p>
                             <br/>
-                            <p>Using this data, I analyzed Dark Pattern in these DOM components, UI patterns making use of human biases to "force" them to accept cookies</p>
+                            <p>From this large-scale analysis, I successfully identified 9,344 cookie banners and conducted detailed analysis of dark patterns - UI design patterns that exploit human cognitive biases to manipulate users into accepting cookies against their best interests.</p>
                             <br/>
-                            <p>A detailed analysis is available in my report, but this work showed that from 9344 banners found, 96% of them had at least one form of Dark Pattern</p>
+                            <p>The research findings revealed that 96% of the analyzed cookie banners contained at least one form of dark pattern, highlighting the widespread nature of manipulative design in web privacy interfaces. The complete methodology and detailed analysis are available in my <a className='underline' href='Master_Thesis.pdf'>thesis report</a>.</p>
                         </ExperienceBlock>
                         <ExperienceBlock
                                 position='Engineering Internship'
@@ -127,7 +126,7 @@ export default function CV() {
                     </div>
                 </div>
                 <div>
-                    <h1 className='text-4xl'>{t.cv.miscExperiences}</h1>
+                    <h1 className='text-2xl sm:text-3xl md:text-4xl'>{t.cv.miscExperiences}</h1>
                     {/* <ExperienceBlock
                         position='Vice President/Member'
                         company='Polyquity'

@@ -3,22 +3,23 @@ import type { Project } from '../types/project';
 export const projects: Project[] = [
   {
     id: 'master-thesis',
-    title: 'Master Thesis - Detecting Dark Patterns in Cookie Banners',
-    description: 'Research thesis conducted at PRIVATICS lab in Grenoble focusing on identifying and analyzing dark patterns in cookie consent banners across the web.',
+    title: 'Master Thesis - Automatically Detect Dark Patterns in Cookie Banners',
+    description: 'Research thesis conducted at PRIVATICS lab (INRIA Grenoble) developing a tool to detect and analyze dark patterns in cookie banners. Crawled over 100,000 websites using OpenWPM, extracted DOM components, and assigned likelihood scores for cookie banner detection. Analyzed 9,344 identified banners and found that 96% contained at least one form of dark pattern - UI patterns exploiting human biases to force cookie acceptance.',
     period: 'February - July 2020',
-    technologies: ['Python', 'Web Scraping', 'Data Analysis', 'Privacy Research'],
+    technologies: ['Python', 'OpenWPM', 'Web Scraping', 'Pandas', 'DOM Analysis', 'Privacy Research', 'Data Analysis', 'Cookie Banners'],
     links: {
-      report: '/master-thesis.pdf'
+      external: '/master-thesis',
+      report: 'Master_Thesis.pdf'
     },
     category: 'thesis',
     featured: true
   },
   {
     id: 'logitech-internship',
-    title: 'Logitech Internship - eSports Pro Player Detection',
-    description: 'Developed machine learning tools to identify future eSports professional players using data analysis and predictive modeling.',
+    title: 'Logitech Engineering Internship - eSports Pro Player Detection',
+    description: 'Developed machine learning tools to identify future eSports professional players using data analysis and predictive modeling. Built a tool to automatically extract game features from Valve/CS:GO logs and analyzed results using ML techniques. Gained experience with Docker, GPU farms, Kubernetes, and advanced C++ programming.',
     period: 'February - August 2018',
-    technologies: ['Machine Learning', 'Data Analysis', 'Docker', 'Kubernetes', 'C++'],
+    technologies: ['C++', 'Machine Learning', 'scikit-learn', 'Data Analysis', 'Data Prediction', 'Docker', 'Kubernetes', 'GPU Computing', 'Valve/CS:GO', 'Makefiles', 'CMake'],
     category: 'internship',
     featured: true
   },
@@ -76,12 +77,12 @@ export const projects: Project[] = [
   },
   {
     id: 'blockchain-rps',
-    title: 'Distributed System Engineering - Blockchain Rock-Paper-Scissors',
-    description: 'Implementation of a distributed Rock-Paper-Scissors game using blockchain technology and smart contracts for fair gameplay.',
+    title: 'Rocky Arena of Scissors and Papers (Rasp)',
+    description: 'A blockchain-powered Rock Paper Scissors game where players can challenge peers and bet on matches. Uses a "Peerster blockchain" to ensure match integrity and prevent cheating through blockchain verification. Features a web interface for challenging and accepting matches with peer-to-peer gameplay.',
     period: '2019',
-    technologies: ['Blockchain', 'Distributed Systems', 'Smart Contracts', 'Scala'],
+    technologies: ['React', 'Go', 'Blockchain', 'Distributed Systems', 'Yarn', 'Peerster Blockchain'],
     links: {
-      github: 'https://github.com/coudr3c/DB_Project1'
+      github: 'https://github.com/aounleonardo/Rasp'
     },
     category: 'school'
   },
@@ -123,13 +124,15 @@ export const projects: Project[] = [
   },
   {
     id: 'rust-vm-connect',
-    title: 'Rust VM Connect',
-    description: 'RDP connection application through AWS SSM Port Forwarding built with Rust and a modern GUI. Provides secure remote desktop access to cloud instances.',
+    title: 'VM Connect - AWS SSM RDP Tunneling Tool',
+    description: 'A Rust GUI application that simplifies connecting to AWS EC2 instances through AWS Systems Manager (SSM) tunnels and Remote Desktop Protocol (RDP). Features a modern graphical interface built with egui, concurrent task management, automatic RDP file discovery, and configurable port forwarding. Eliminates the complexity of manually setting up SSM tunnels and RDP connections.',
     period: '2025',
-    technologies: ['Rust', 'AWS', 'RDP', 'GUI', 'Async Programming', 'Networking'],
+    technologies: ['Rust', 'egui', 'Tokio', 'AWS SDK', 'AWS SSM', 'RDP', 'GUI', 'Async Programming', 'WebSocket', 'Cross-platform'],
     links: {
-      github: 'https://github.com/coudr3c/rust-vm-connect'
+      github: 'https://github.com/coudr3c/rust-vm-connect',
+      external: '/vm-connect'
     },
-    category: 'misc'
+    category: 'misc',
+    featured: true
   }
 ];

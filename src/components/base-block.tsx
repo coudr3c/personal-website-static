@@ -15,13 +15,13 @@ function BaseBlock(props: BaseBlockProps) {
 
     return (
         <div className="relative">
-            <div className="relative rounded-lg border border-theme-border bg-theme-surface p-6 shadow-sm">
+            <div className="relative rounded-lg border border-theme-border bg-theme-surface p-4 sm:p-6 shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                     <div>
-                        <h3 className="text-xl font-semibold text-theme-text-primary">{props.title}</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-theme-text-primary">{props.title}</h3>
                         <p className="text-theme-text-secondary">{props.subtitle}</p>
                     </div>
-                    <div className="text-sm text-theme-text-secondary">
+                    <div className="text-sm text-theme-text-secondary sm:text-right">
                         <div>{props.timePeriodFrom} — {props.timePeriodTo}</div>
                         <div className="text-theme-text-secondary">{props.location}</div>
                     </div>

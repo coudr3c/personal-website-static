@@ -12,6 +12,8 @@ const Home = lazy(() => import('./home.tsx'));
 const About = lazy(() => import('./about.tsx'));
 const CV = lazy(() => import('./cv.tsx'));
 const GSoC = lazy(() => import('./gsoc.tsx'));
+const MasterThesis = lazy(() => import('./master-thesis.tsx'));
+const VmConnect = lazy(() => import('./vm-connect.tsx'));
 const Projects = lazy(() => import('./projects.tsx'));
 const Skills = lazy(() => import('./skills.tsx'));
 const NotFound = lazy(() => import('./not-found.tsx'));
@@ -33,6 +35,8 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/about" element={<About />} />
                 <Route path="/cv" element={<CV />} />
                 <Route path="/gsoc" element={<GSoC />} />
+                <Route path="/master-thesis" element={<MasterThesis />} />
+                <Route path="/vm-connect" element={<VmConnect />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/skills" element={<Skills />} />
                 <Route path="*" element={<NotFound />} />

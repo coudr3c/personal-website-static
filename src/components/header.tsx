@@ -26,7 +26,7 @@ export default function Header() {
                     </div>
 
                     {/* Centered profile image */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+                    <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
                         <img 
                             className="h-12 w-12 rounded-full border-2 border-theme-border hover:border-blue-500 transition-colors"
                             src="bp.jpg"

@@ -22,9 +22,13 @@ type TranslationStructure = {
     cv: string;
     projects: string;
     gsoc: string;
+    masterThesis: string;
+    vmConnect: string;
   };
   home: {
     jobDescription: string;
+    jobDescriptionSince: string;
+    jobSeekingText: string;
     contactText: string;
   };
   about: {
@@ -84,6 +88,208 @@ type TranslationStructure = {
       misc: string;
     };
   };
+
+  // Master Thesis page
+  masterThesis: {
+    title: string;
+    subtitle: string;
+    thesisOverview: string;
+    period: string;
+    laboratory: string;
+    supervisors: string;
+    institution: string;
+    technologiesMethods: string;
+    researchObjective: string;
+    researchObjectiveText: string;
+    theoreticalFramework: string;
+    cognitiveBiases: string;
+    cognitiveBiasesItems: {
+      system: string;
+      anchoring: string;
+      defaultBias: string;
+      behavioral: string;
+    };
+    darkPatternClassification: string;
+    darkPatternItems: {
+      nudges: string;
+      taxonomy: string;
+      gdpr: string;
+      legal: string;
+    };
+    methodology: string;
+    dataCollection: string;
+    dataCollectionText: string;
+    bannerDetection: string;
+    bannerDetectionText: string;
+    darkPatternClassificationMethod: string;
+    darkPatternClassificationText: string;
+    keyFindings: string;
+    scaleOfAnalysis: string;
+    scaleItems: {
+      websites: string;
+      banners: string;
+      darkPatterns: string;
+      coverage: string;
+    };
+    darkPatternCategories: string;
+    darkPatternCategoriesItems: {
+      visibility: string;
+      language: string;
+      bias: string;
+      rejection: string;
+    };
+    technicalImplementation: string;
+    openWpmIntegration: string;
+    openWpmText: string;
+    dataProcessing: string;
+    dataProcessingText: string;
+    impactSignificance: string;
+    impactText1: string;
+    impactText2: string;
+    futureWork: string;
+    futureWorkItems: {
+      beyondFirst: string;
+      nlp: string;
+      largerScale: string;
+      multilingual: string;
+    };
+    resources: string;
+    downloadThesis: string;
+    viewOpenWpm: string;
+  };
+
+  // GSoC page
+  gsoc: {
+    title: string;
+    subtitle: string;
+    projectOverview: string;
+    year: string;
+    organization: string;
+    mentor: string;
+    duration: string;
+    technologies: string;
+    projectGoal: string;
+    projectGoalText: string;
+    keyComponents: string;
+    lowLevelPrimitives: string;
+    lowLevelItems: {
+      posix: string;
+      atomics: string;
+      concurrent: string;
+    };
+    highLevelComponents: string;
+    highLevelItems: {
+      locks: string;
+      thread: string;
+      forkJoin: string;
+    };
+    majorChallenges: string;
+    challengesItems: {
+      youngProject: string;
+      missingFeatures: string;
+      complexDependencies: string;
+    };
+    technicalAchievements: string;
+    achievementsItems: {
+      ported: string;
+      implemented: string;
+      created: string;
+      contributed: string;
+    };
+    learningOutcomes: string;
+    learningText: string;
+    learningItems: {
+      compiler: string;
+      systems: string;
+      language: string;
+      openSource: string;
+    };
+    acknowledgements: string;
+    acknowledgementsText1: string;
+    acknowledgementsText2: string;
+    impactFuture: string;
+    impactText: string;
+    viewScalaNative: string;
+    viewContributions: string;
+  };
+
+  // VM Connect page
+  vmConnect: {
+    title: string;
+    subtitle: string;
+    projectOverview: string;
+    period: string;
+    purpose: string;
+    target: string;
+    platform: string;
+    purposeText: string;
+    targetText: string;
+    platformText: string;
+    technologies: string;
+    problemStatement: string;
+    problemText: string;
+    solutionFeatures: string;
+    coreFunctionality: string;
+    coreItems: {
+      ssmTunnel: string;
+      rdpConnection: string;
+      guiInterface: string;
+      multiVm: string;
+    };
+    advancedFeatures: string;
+    advancedItems: {
+      portForwarding: string;
+      rdpDiscovery: string;
+      taskManagement: string;
+      shutdown: string;
+    };
+    technicalArchitecture: string;
+    threadingModel: string;
+    threadingText: string;
+    communicationFlow: string;
+    communicationText: string;
+    securityBestPractices: string;
+    securityItems: {
+      iamIntegration: string;
+      resourceManagement: string;
+      errorHandling: string;
+      threadSafety: string;
+    };
+    implementationHighlights: string;
+    technicalAchievements: string;
+    technicalItems: {
+      crossPlatform: string;
+      asyncPatterns: string;
+      processMonitoring: string;
+      modernGui: string;
+    };
+    developmentQuality: string;
+    qualityItems: {
+      errorHandling: string;
+      modularArch: string;
+      rustEdition: string;
+      buildTargets: string;
+    };
+    impactFuture: string;
+    impactText: string;
+    currentStatus: string;
+    currentItems: {
+      coreFunctionality: string;
+      guiInterface: string;
+      crossPlatform: string;
+      errorHandling: string;
+    };
+    futureEnhancements: string;
+    futureItems: {
+      dynamicConfig: string;
+      profileManagement: string;
+      integrationTests: string;
+      dynamicRdp: string;
+    };
+    resources: string;
+    viewSourceCode: string;
+  };
+
   common: {
     loading: string;
   };

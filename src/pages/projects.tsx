@@ -31,7 +31,7 @@ export default function Projects() {
                         <h2 className="text-2xl font-bold text-theme-text-primary mb-6">
                             {t.projects.featured}
                         </h2>
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
                             {featuredProjects.map(project => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
@@ -44,7 +44,7 @@ export default function Projects() {
                         <h2 className="text-2xl font-bold text-theme-text-primary mb-6">
                             {t.projects.categories[category as keyof typeof t.projects.categories]}
                         </h2>
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
                             {categoryProjects.map(project => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
