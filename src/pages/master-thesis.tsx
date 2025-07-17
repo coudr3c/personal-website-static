@@ -5,7 +5,7 @@ export default function MasterThesis() {
     const { t } = useTranslation();
 
     return (
-        <PageTemplate pageTitle={t.pages.masterThesis} seoPageKey="gsoc">
+        <PageTemplate pageTitle={t.pages.masterThesis} seoPageKey="master-thesis">
             <div className="space-y-6">
                 <div className="mb-8">
                     <h2 className="text-2xl font-bold text-theme-text-primary mb-4">

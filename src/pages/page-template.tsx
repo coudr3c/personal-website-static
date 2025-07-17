@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react';
 
 type pageTemplateProps = {
     pageTitle: string;
-    seoPageKey?: 'home' | 'about' | 'skills' | 'cv' | 'projects' | 'gsoc';
+    seoPageKey?: 'home' | 'about' | 'skills' | 'cv' | 'projects' | 'gsoc' | 'vm-connect' | 'master-thesis';
 }
 
 export default function PageTemplate(props: PropsWithChildren<pageTemplateProps>) {

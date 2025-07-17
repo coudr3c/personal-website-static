@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useTranslation } from '../i18n/context';
 
 interface SEOHeadProps {
-    pageKey?: 'home' | 'about' | 'skills' | 'cv' | 'projects' | 'gsoc';
+    pageKey?: 'home' | 'about' | 'skills' | 'cv' | 'projects' | 'gsoc' | 'vm-connect' | 'master-thesis';
 }
 
 export default function SEOHead({ pageKey = 'home' }: SEOHeadProps) {
@@ -16,7 +16,11 @@ export default function SEOHead({ pageKey = 'home' }: SEOHeadProps) {
         if (pageKey === 'home') {
             document.title = language === 'fr' ? frenchTitle : baseTitle;
         } else {
-            const pageTitle = t.pages[pageKey];
+            // Convert kebab-case to camelCase for translation keys
+            const translationKey = pageKey === 'vm-connect' ? 'vmConnect' : 
+                                   pageKey === 'master-thesis' ? 'masterThesis' : 
+                                   pageKey;
+            const pageTitle = t.pages[translationKey as keyof typeof t.pages];
             const siteTitle = language === 'fr' ? frenchTitle : baseTitle;
             document.title = `${pageTitle} - ${siteTitle}`;
         }
